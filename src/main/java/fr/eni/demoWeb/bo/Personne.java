@@ -3,6 +3,7 @@ package fr.eni.demoWeb.bo;
 public class Personne {
 	private String prenom;
 	private int age;
+	private Metier metier;
 	
 	public Personne() {
 	}
@@ -33,6 +34,14 @@ public class Personne {
 	@Override
 	public String toString() {
 		return "Personne [prenom=" + prenom + ", age=" + age + "]";
+	}
+
+	public Metier getMetier() {
+		return metier;
+	}
+
+	public void setMetier(Metier metier) {
+		this.metier = metier;
 	}
 
 }

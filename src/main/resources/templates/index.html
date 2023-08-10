@@ -10,9 +10,16 @@
 
 <form th:action="@{/accueil}" th:object=${personne} method="post">
   <label for="prenomInput">Prenom : </label>
-  <input type="text" th:field="*{prenom}" id="prenomInput" /> 
+  <input type="text" th:field="*{prenom}" id="prenomInput" />
+  <br> 
   <label for="ageInput">Age : </label>
   <input type="number" th:field="*{age}" id="ageInput" /> 
+  <br>
+  Métier : <select class="form-select col-3"  th:field="*{metier}" required>
+	  	<option th:each="metier: ${metiers}" 
+	  	th:value="${metier.id}" th:text="${metier.libelle}"></option>
+  </select>	 
+  <br>
   <button type="submit">Dire Hello</button>
 </form>
 
@@ -22,6 +29,7 @@
 		<tr th:each="pers: ${personnes}">
 			<td th:text="${pers.prenom}" />
 			<td th:text="${pers.age}" />
+			<td th:text="${pers.metier.libelle}"></td>	
 		</tr>
 	</table>
 

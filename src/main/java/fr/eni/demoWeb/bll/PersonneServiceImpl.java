@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import fr.eni.demoWeb.bo.Metier;
 import fr.eni.demoWeb.bo.Personne;
 import fr.eni.demoWeb.dal.PersonneDAO;
 
@@ -27,6 +28,18 @@ public class PersonneServiceImpl implements PersonneService{
 	public void addPersonne(Personne p) {
 		this.personneDAO.addPersonne(p);
 		
+	}
+
+	@Override
+	public List<Metier> findMetiers() {
+		// TODO Auto-generated method stub
+		return personneDAO.selectMetiers();
+	}
+
+	@Override
+	public Metier findMetierById(Integer id) {
+		// TODO Auto-generated method stub
+		return personneDAO.findMetierById(id);
 	}
 	
 	

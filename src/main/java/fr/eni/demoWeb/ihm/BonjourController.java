@@ -26,6 +26,7 @@ public class BonjourController {
 	public String accueil(Model modele) {
 		modele.addAttribute("personne", new Personne("Votre nom", 1));
 		modele.addAttribute("personnes", this.personneService.findPersonnes());
+		modele.addAttribute("metiers", this.personneService.findMetiers());
 		return "index";
 	}
 	
